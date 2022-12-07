@@ -34,13 +34,8 @@ module Day02
 
     def comparison_result(round)
       return 3 if round[0] == round[1]
-
-      case round
-      in ["rock", "paper"] | ["paper", "scissors"] | ["scissors", "rock"]
-        6
-      else
-        0
-      end
+      return 6 if round in ["rock", "paper"] | ["paper", "scissors"] | ["scissors", "rock"]
+      0
     end
   end
 end
