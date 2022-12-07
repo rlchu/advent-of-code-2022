@@ -1,5 +1,3 @@
-# part 1
-
 module Day01
   class << self
 
@@ -16,5 +14,4 @@ module Day01
 
   end
 end
-
 
