@@ -18,7 +18,9 @@ describe Day01 do
 10000"
   }
 
-  it "solves with sample data" do
-    expect(Day01.part1(sample_data)).to eq(24000)
+  context "part 1" do
+    it "solves with sample data" do
+      expect(Day01.part1(sample_data)).to eq(24000)
+    end
   end
 end

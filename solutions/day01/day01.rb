@@ -10,9 +10,11 @@ module Day01
         .max
     end
 
+    def part2(data)
+
+    end
+
   end
 end
-
-
 
 
