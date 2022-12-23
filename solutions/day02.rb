@@ -46,13 +46,13 @@ module Day02
     def winning_choice(opp)
       return "scissors" if opp ==  "paper"
       return "paper" if opp == "rock"
-      return "rock" if opp = "scissors"
+      return "rock" if opp == "scissors"
     end
 
     def losing_choice(opp)
       return "rock" if opp ==  "paper"
       return "scissors" if opp == "rock"
-      return "paper" if opp = "scissors"
+      return "paper" if opp == "scissors"
     end
 
     def battle_result(round)
