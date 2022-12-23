@@ -1,5 +1,5 @@
 require 'pry'
-("01" .. "05").each do |n|
+("01".."05").each do |n|
   require_relative "../solutions/day#{n}"
 end
 
