@@ -11,7 +11,7 @@ module Day04
 
     def part2(pairs)
       scan_intersections(pairs) do |intersection, count, _, _|
-        !intersection.empty? ? count+=1 : count
+        intersection.empty? ? count : count+=1
       end
     end
 
@@ -26,7 +26,6 @@ module Day04
         yield intersection, count, r1, r2
       end
     end
-
   end
 end
 
