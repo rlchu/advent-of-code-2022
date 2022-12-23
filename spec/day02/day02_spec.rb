@@ -13,4 +13,14 @@ describe Day02 do
       expect(Day02.part1(input)). to eq(14531)
     end
   end
+
+  context "part 1" do
+    it "solves with sample data" do
+      expect(Day02.part2(sample_data)).to eq(12)
+    end
+
+    it "solves with input" do
+      expect(Day02.part2(input)). to eq(11258)
+    end
+  end
 end
