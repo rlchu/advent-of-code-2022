@@ -6,7 +6,7 @@ describe Day07 do
 
   context "part 1" do
     it "solves with sample data" do
-      expect(Day07.new(sample_data).part1).to eq(nil)
+      expect(Day07.new(sample_data).part1).to eq(95437)
     end
 
     it "solves with input" do

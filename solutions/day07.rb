@@ -1,23 +1,28 @@
 class Day07
-  attr_accessor :filestructure, :current_directory, :file_sizes
+  attr_accessor :filestructure, :current_path, :file_sizes
 
   def initialize(input)
-    @current_directory = "/"
+    @current_path = ["/"]
     @filestructure = input
-    @file_sizes = Hash.new {|h,k| h[k]=[]}
+    @file_sizes = Hash.new(0)
   end
 
   def part1
     @filestructure.each do |command|
       cd = command.scan(/\$ cd (.+)/).first&.first
-      @current_directory = cd if cd
-      file_sizes[@current_directory] << command.to_i if command.to_i > 0
+      current_path << cd if cd
+      # current_path.uniq!
+      2.times { current_path.pop } if cd == ".."
+      if command.to_i > 0
+        current_path.each do |directory|
+          file_sizes[directory] += command.to_i
+        end
+      end
     end
-    # a = filestructure.chunk_while do |command|
-    #   !(command =~ /\$ cd/)
-    # end.each do |i, j|
-
-    # end
+    file_sizes.reduce(0) do |acc, val|
+      acc += val.last if val.last < 100_000
+      acc
+    end
   end
 
   def part2
@@ -25,5 +30,6 @@ class Day07
   end
 
   private
+
 end
 
