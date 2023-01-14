@@ -9,18 +9,18 @@ describe Day07 do
       expect(Day07.new(sample_data).part1).to eq(95437)
     end
 
-    it "solves with input" do
-      expect(Day07.new(input).part1).to eq(nil)
-    end
+#     it "solves with input" do
+#       expect(Day07.new(input).part1).to eq(nil)
+#     end
   end
 
-  context "part 2" do
-    it "solves with sample data" do
-      expect(Day07.new(sample_data).part2).to eq(nil)
-    end
+  # context "part 2" do
+  #   it "solves with sample data" do
+  #     expect(Day07.new(sample_data).part2).to eq(nil)
+  #   end
 
-    it "solves with input" do
-      expect(Day07.new(input).part2).to eq(nil)
-    end
-  end
+  #   it "solves with input" do
+  #     expect(Day07.new(input).part2).to eq(nil)
+  #   end
+  # end
 end

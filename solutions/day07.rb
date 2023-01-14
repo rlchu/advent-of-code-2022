@@ -5,25 +5,35 @@ class Day07
     @current_path = ["/"]
     @filestructure = input
     @file_sizes = Hash.new(0)
+    @file_info = {}
   end
 
   def part1
     @filestructure.each do |command|
       cd = command.scan(/\$ cd (.+)/).first&.first
-      current_path << cd if cd
-      current_path.uniq!
-      2.times { current_path.pop } if cd == ".."
+      if cd
+        @current_path << cd
+        @current_path.uniq!
+        2.times { current_path.pop } if cd == ".."
+      end
       if command.to_i > 0
-        current_path.each do |directory|
-          @file_sizes[directory] += command.to_i
-        end
+        file_size, file_name = command.split(" ")
+        @file_info[file_name] = {size: file_size.to_i, location: current_path.reverse}
       end
     end
 
     total = 0
+
+    @file_info.each do |entry|
+      entry.last[:location].each do |folder|
+        @file_sizes[folder]  += entry.last[:size]
+      end
+    end
+
     @file_sizes.each do |val|
       total += val.last if val.last <= 100_000
     end
+
     total
   end
 
